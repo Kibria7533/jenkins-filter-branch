@@ -10,7 +10,7 @@ pipeline {
                 script {
                     def branchPattern = "${params.BRANCH_TYPE}/.*"
                     if (params.BRANCH_NAME ==~ branchPattern) {
-                        checkout([$class: 'GitSCM', branches: [[name: params.BRANCH_NAME]], userRemoteConfigs: [[url: 'git@github.com:Kibria7533/jenkins-filter-branch.git']]])
+                        checkout([$class: 'GitSCM', branches: [[name: params.BRANCH_NAME]], userRemoteConfigs: [[url: 'https://github.com/Kibria7533/jenkins-filter-branch.git']]])
                     } else {
                         error("Branch name does not match the selected branch type pattern")
                     }
